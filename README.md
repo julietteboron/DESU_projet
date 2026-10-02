@@ -1,6 +1,6 @@
-# À lire avant de lancer le code
+# MANUEL D'UTLISATION - À lire avant de lancer le code :) 
 
-Bienvenue ! :) 
+Bienvenue ! 😁💻
 
 Ce dépôt contient mon projet de machine learning réalisé dans le cadre du DESU : **prédire le CO₂ émis par habitant d'un pays à partir de son profil socio-économique**.
 
