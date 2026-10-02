@@ -1,10 +1,10 @@
 # À lire avant de lancer le code
 
-Bienvenue ! 👋
+Bienvenue ! :) 
 
-Ce dépôt contient mon projet de machine learning réalisé dans le cadre du DESU : **prédire le CO₂ émis par habitant d'un pays à partir de son profil socio-économique** (PIB, urbanisation, motorisation, mix énergétique…), puis tester si l'orientation politique des gouvernements apporte une information supplémentaire.
+Ce dépôt contient mon projet de machine learning réalisé dans le cadre du DESU : **prédire le CO₂ émis par habitant d'un pays à partir de son profil socio-économique**.
 
-Ce fichier explique comment installer l'environnement et exécuter le notebook. Comptez une dizaine de minutes d'installation.
+Ce fichier explique comment installer l'environnement et exécuter le notebook!
 
 ---
 
@@ -13,7 +13,7 @@ Ce fichier explique comment installer l'environnement et exécuter le notebook. 
 | Fichier | Rôle |
 |---|---|
 | `Climat_DM_clean.ipynb` | **Le notebook du projet** : c'est lui qu'il faut ouvrir et exécuter. |
-| `global_climate_co2_anomalies.csv` | Données climatiques et socio-économiques : 30 pays, 1990-2024, une ligne par mois. |
+| `global_climate_co2_anomalies.csv` | Données climatiques Kaggle (https://www.kaggle.com/datasets/mohankrishnathalla/global-climate-and-co-anomalies-19902024/data) |
 | `view_cabinet.csv` | Données politiques ParlGov (gouvernements et score gauche-droite). |
 | `identifying_ideologues.tab` | Données politiques Global Leader Ideology (orientation des chefs de gouvernement). |
 | `requirements.txt` | Liste des bibliothèques Python et de leurs versions. |
@@ -22,22 +22,16 @@ Ce fichier explique comment installer l'environnement et exécuter le notebook. 
 
 ## Procédure
 
-### 1. Prérequis
-
-- **Anaconda** ou **Miniconda** (pour créer un environnement Python isolé) ;
-- **VS Code** avec l'extension *Jupyter*, ou **Jupyter Notebook / JupyterLab** ;
-- une **connexion internet** : une cellule télécharge les données de régimes politiques (V-Dem) sur Our World in Data.
-
-### 2. Récupérer le projet
+### Récupérer le projet
 
 ```bash
 git clone https://github.com/julietteboron/DESU_projet.git
 cd DESU_projet
 ```
 
-### 3. Créer l'environnement et installer les bibliothèques
+### Créer l'environnement et installer les bibliothèques
 
-Dans un terminal (sous Windows : *Anaconda Prompt*), depuis le dossier `DESU_projet` :
+Dans un terminal, depuis le dossier `DESU_projet` :
 
 ```bash
 conda create -n desu_climat python=3.12
@@ -47,13 +41,12 @@ pip install -r requirements.txt
 
 > ⚠️ Gardez bien les versions de `requirements.txt`, en particulier `numpy==1.26.4` : TensorFlow essaie sinon d'installer numpy 2.x, qui est incompatible avec la version de scipy utilisée et fait planter scikit-learn.
 
-### 4. Ouvrir le notebook avec le bon environnement
+### Ouvrir le notebook avec le bon environnement
 
-1. Ouvrez `Climat_DM_clean.ipynb` dans VS Code (ou Jupyter).
+1. Ouvrez `Climat_DM_clean.ipynb` dans VS Code.
 2. Sélectionnez le kernel **`desu_climat`** (en haut à droite dans VS Code : *Select Kernel* → *Python Environments* → `desu_climat`).
-3. Vérifiez que le notebook est ouvert **depuis le dossier du projet** : les fichiers de données sont lus avec des chemins relatifs.
 
-### 5. Exécuter
+### Exécuter
 
 Lancez **Run All** (*Exécuter tout*) et exécutez les cellules **dans l'ordre** : chaque partie réutilise les variables des parties précédentes.
 
@@ -62,18 +55,6 @@ Lancez **Run All** (*Exécuter tout*) et exécutez les cellules **dans l'ordre**
 
 ---
 
-## Organisation du notebook
-
-1. **Chargement des données**
-2. **Exploration et visualisation** (liens entre CO₂ et variables socio-économiques)
-3. **Choix de la variable cible** : `co2_per_capita`
-4. **Préprocessing** (passage en données annuelles, lags, découpage temporel : entraînement 1995-2016, test 2017-2024)
-5. **Modèles de base** (régression linéaire, Random Forest)
-6. **Optimisation des hyperparamètres avec Optuna**
-7. **Diagnostic** : courbes d'apprentissage, validation respectant le temps, comparaison à un modèle naïf, **Random Forest sur la variation depuis la dernière année connue** (meilleur modèle), essai d'un **LSTM**
-8. **Variables politiques** : orientation gauche-droite et type de régime, ajout au modèle et comparaison entre pays
-
----
 
 ## Sources des données politiques
 
@@ -91,3 +72,5 @@ Lancez **Run All** (*Exécuter tout*) et exécutez les cellules **dans l'ordre**
 - **Erreur dans la cellule V-Dem** : vérifiez la connexion internet.
 
 Bonne exploration !
+
+Juliette 
