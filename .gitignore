@@ -1,0 +1,7 @@
+# Résultats calculés localement (régénérés en exécutant le notebook)
+cache_optuna/
+*.pkl
+
+# Fichiers temporaires Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/

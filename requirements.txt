@@ -1,0 +1,20 @@
+# Bibliothèques nécessaires pour exécuter Climat_DM_clean.ipynb (Python 3.12)
+#
+# Installation conseillée dans un environnement dédié :
+#   conda create -n desu_climat python=3.12
+#   conda activate desu_climat
+#   pip install -r requirements.txt
+# Puis ouvrir le notebook et choisir le kernel "desu_climat".
+#
+# numpy est fixé en 1.26.x : TensorFlow installerait sinon numpy 2.x, incompatible avec scipy 1.13.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.1
+matplotlib==3.9.2
+seaborn==0.13.2
+optuna==5.0.0
+plotly==5.24.1        # graphiques optuna.visualization
+joblib==1.4.2
+tensorflow==2.18.1    # modèle LSTM
+ipykernel==6.28.0     # pour exécuter le notebook
