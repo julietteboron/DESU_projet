@@ -5,3 +5,7 @@ cache_optuna/
 # Fichiers temporaires Jupyter / Python
 .ipynb_checkpoints/
 __pycache__/
+
+# Anciennes versions du notebook (conservées en local uniquement)
+Climat_DM.ipynb
+Climat_DM_reorganise.ipynb
